@@ -1,0 +1,1 @@
+{"version":3,"sources":["scss/index.scss"],"names":[],"mappings":"AAAQ;AAIR;EACI;EACA,aAJQ","file":"public.e31bb0bc.css","sourceRoot":"../public","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');\n\n$sans-font: Poppins;\n\nbody {\n    background-color: #dee2e6;\n    font-family: $sans-font;\n}"]}
