@@ -1,13 +1,22 @@
-import './scss/index.scss'
-import React from 'react'
-import ReactDOM from 'react-dom'
+import "./scss/index.scss";
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import Questions from "./components/Questions";
+import Result from "./components/Result";
 
-const data = require('./../questions.json')
 
 const App = () => {
-    return(
-        <h1>Hello World</h1>
-    )
-}
+  const [score, setScore] = useState(0);
+  const [isCompleted, setIsCompleted] = useState(false);
 
-ReactDOM.render(<App/>, document.getElementById("container"))
+  
+    if (!isCompleted) {
+        return <Questions score={score} setScore={setScore} setIsCompleted={setIsCompleted} />;
+    }
+    return <Result score={score} setScore={setScore} setIsCompleted={setIsCompleted}/>
+};
+
+
+
+
+ReactDOM.render(<App />, document.getElementById("container"));
