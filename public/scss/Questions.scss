@@ -86,11 +86,13 @@ $theme-color: #0466c8;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
+
 
         button {
             width: 100%;
             height: 50px;
+            margin-top: 10px;
+            margin-bottom: 10px;
             background-color: transparent;
             border: none;
             border-left: solid 5px white;
@@ -106,6 +108,12 @@ $theme-color: #0466c8;
 
     #container {
         width: 90%;
+
+        #bottom {
+            button {
+                margin-top: 20px;
+            }
+        }
     }
     
 }
