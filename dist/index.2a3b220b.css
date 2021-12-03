@@ -90,11 +90,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
 }
 #container #bottom button {
   width: 100%;
   height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: transparent;
   border: none;
   border-left: solid 5px white;
@@ -107,6 +108,9 @@ body {
 @media screen and (max-width: 483px) {
   #container {
     width: 90%;
+  }
+  #container #bottom button {
+    margin-top: 20px;
   }
 }
 #result {
@@ -164,8 +168,8 @@ body {
 
 @media screen and (max-width: 483px) {
   #result {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
   }
 }
 /*# sourceMappingURL=index.2a3b220b.css.map */
