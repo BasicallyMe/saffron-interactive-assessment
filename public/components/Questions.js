@@ -4,11 +4,11 @@ import { VscChevronLeft } from "react-icons/vsc";
 
 const Questions = (props) => {
   const [questionNumber, setQuestionNumber] = useState(0);
-  const { data, score, setScore, setIsCompleted } = props;
+  const { data, answer, setAnswer, setIsCompleted } = props;
 
   const progressBarStyle = {
-    width: `${((questionNumber + 1) / data.questions.length) * 100}%`
-  }
+    width: `${((questionNumber + 1) / data.questions.length) * 100}%`,
+  };
 
   const optionsList = data.questions[questionNumber].options.map((option) => (
     <button
@@ -23,12 +23,18 @@ const Questions = (props) => {
   function goBack() {
     if (questionNumber !== 0) {
       setQuestionNumber(questionNumber - 1);
+      setAnswer(() => {
+        answer.pop()
+        return answer
+      })
     }
   }
+  
   function changeQuestion(e) {
-    if (e.target.value == "true") {
-      setScore(score + 20);
-    }
+    setAnswer(() => {
+      answer.push(e.target.value)
+      return answer
+    })
     if (questionNumber === data.questions.length - 1) {
       setIsCompleted(true);
     } else {

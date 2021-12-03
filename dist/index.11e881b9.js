@@ -958,12 +958,12 @@ var _s = $RefreshSig$();
 const data = require("./../questions.json");
 const App = ()=>{
     _s();
-    const [score, setScore] = _react.useState(0);
-    const [isCompleted, setIsCompleted] = _react.useState(true);
+    const [answer, setAnswer] = _react.useState([]);
+    const [isCompleted, setIsCompleted] = _react.useState(false);
     if (!isCompleted) return(/*#__PURE__*/ _jsxRuntime.jsx(_questionsDefault.default, {
         data: data,
-        score: score,
-        setScore: setScore,
+        answer: answer,
+        setAnswer: setAnswer,
         setIsCompleted: setIsCompleted,
         __source: {
             fileName: "public/index.js",
@@ -973,8 +973,7 @@ const App = ()=>{
         __self: undefined
     }));
     return(/*#__PURE__*/ _jsxRuntime.jsx(_resultDefault.default, {
-        score: score,
-        setScore: setScore,
+        answer: answer,
         setIsCompleted: setIsCompleted,
         passmark: data.passmark,
         __source: {
@@ -985,12 +984,12 @@ const App = ()=>{
         __self: undefined
     }));
 };
-_s(App, "jvKtlWJaxl6kX1swDMZ0v+7q/NY=");
+_s(App, "GKZhiNkEu/vNE9QpjLx/ez4I9ko=");
 _c = App;
 _reactDomDefault.default.render(/*#__PURE__*/ _jsxRuntime.jsx(App, {
     __source: {
         fileName: "public/index.js",
-        lineNumber: 33,
+        lineNumber: 32,
         columnNumber: 17
     },
     __self: undefined
@@ -22929,7 +22928,7 @@ var _s = $RefreshSig$();
 const Questions = (props)=>{
     _s();
     const [questionNumber, setQuestionNumber] = _react.useState(0);
-    const { data , score , setScore , setIsCompleted  } = props;
+    const { data , answer , setAnswer , setIsCompleted  } = props;
     const progressBarStyle = {
         width: `${(questionNumber + 1) / data.questions.length * 100}%`
     };
@@ -22946,10 +22945,19 @@ const Questions = (props)=>{
         }, option.label)
     );
     function goBack() {
-        if (questionNumber !== 0) setQuestionNumber(questionNumber - 1);
+        if (questionNumber !== 0) {
+            setQuestionNumber(questionNumber - 1);
+            setAnswer(()=>{
+                answer.pop();
+                return answer;
+            });
+        }
     }
     function changeQuestion(e) {
-        if (e.target.value == "true") setScore(score + 20);
+        setAnswer(()=>{
+            answer.push(e.target.value);
+            return answer;
+        });
         if (questionNumber === data.questions.length - 1) setIsCompleted(true);
         else setQuestionNumber(questionNumber + 1);
     }
@@ -22957,7 +22965,7 @@ const Questions = (props)=>{
         id: "container",
         __source: {
             fileName: "public/components/Questions.js",
-            lineNumber: 40,
+            lineNumber: 46,
             columnNumber: 5
         },
         __self: undefined,
@@ -22966,7 +22974,7 @@ const Questions = (props)=>{
                 id: "top",
                 __source: {
                     fileName: "public/components/Questions.js",
-                    lineNumber: 41,
+                    lineNumber: 47,
                     columnNumber: 7
                 },
                 __self: undefined,
@@ -22974,7 +22982,7 @@ const Questions = (props)=>{
                     /*#__PURE__*/ _jsxRuntime.jsxs("header", {
                         __source: {
                             fileName: "public/components/Questions.js",
-                            lineNumber: 42,
+                            lineNumber: 48,
                             columnNumber: 9
                         },
                         __self: undefined,
@@ -22983,7 +22991,7 @@ const Questions = (props)=>{
                                 id: "icon",
                                 __source: {
                                     fileName: "public/components/Questions.js",
-                                    lineNumber: 43,
+                                    lineNumber: 49,
                                     columnNumber: 11
                                 },
                                 __self: undefined,
@@ -22992,7 +23000,7 @@ const Questions = (props)=>{
                                     onClick: goBack,
                                     __source: {
                                         fileName: "public/components/Questions.js",
-                                        lineNumber: 44,
+                                        lineNumber: 50,
                                         columnNumber: 13
                                     },
                                     __self: undefined
@@ -23002,7 +23010,7 @@ const Questions = (props)=>{
                                 id: "question-numbers",
                                 __source: {
                                     fileName: "public/components/Questions.js",
-                                    lineNumber: 46,
+                                    lineNumber: 52,
                                     columnNumber: 11
                                 },
                                 __self: undefined,
@@ -23011,7 +23019,7 @@ const Questions = (props)=>{
                                         id: "current-question",
                                         __source: {
                                             fileName: "public/components/Questions.js",
-                                            lineNumber: 47,
+                                            lineNumber: 53,
                                             columnNumber: 13
                                         },
                                         __self: undefined,
@@ -23024,7 +23032,7 @@ const Questions = (props)=>{
                                         id: "total-questions",
                                         __source: {
                                             fileName: "public/components/Questions.js",
-                                            lineNumber: 48,
+                                            lineNumber: 54,
                                             columnNumber: 13
                                         },
                                         __self: undefined,
@@ -23041,7 +23049,7 @@ const Questions = (props)=>{
                         id: "outer-progress-bar",
                         __source: {
                             fileName: "public/components/Questions.js",
-                            lineNumber: 51,
+                            lineNumber: 57,
                             columnNumber: 9
                         },
                         __self: undefined,
@@ -23050,7 +23058,7 @@ const Questions = (props)=>{
                             style: progressBarStyle,
                             __source: {
                                 fileName: "public/components/Questions.js",
-                                lineNumber: 52,
+                                lineNumber: 58,
                                 columnNumber: 11
                             },
                             __self: undefined
@@ -23060,14 +23068,14 @@ const Questions = (props)=>{
                         id: "question",
                         __source: {
                             fileName: "public/components/Questions.js",
-                            lineNumber: 54,
+                            lineNumber: 60,
                             columnNumber: 9
                         },
                         __self: undefined,
                         children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                             __source: {
                                 fileName: "public/components/Questions.js",
-                                lineNumber: 55,
+                                lineNumber: 61,
                                 columnNumber: 11
                             },
                             __self: undefined,
@@ -23077,7 +23085,7 @@ const Questions = (props)=>{
                     /*#__PURE__*/ _jsxRuntime.jsx("footer", {
                         __source: {
                             fileName: "public/components/Questions.js",
-                            lineNumber: 57,
+                            lineNumber: 63,
                             columnNumber: 9
                         },
                         __self: undefined,
@@ -23089,7 +23097,7 @@ const Questions = (props)=>{
                 id: "bottom",
                 __source: {
                     fileName: "public/components/Questions.js",
-                    lineNumber: 59,
+                    lineNumber: 65,
                     columnNumber: 7
                 },
                 __self: undefined,
@@ -31687,15 +31695,17 @@ var _resultScss = require("./../scss/Result.scss");
 var _25Png = require("./../assets/25.png");
 var _25PngDefault = parcelHelpers.interopDefault(_25Png);
 const Result = (props)=>{
-    const { score , setScore , setIsCompleted , passmark  } = props;
+    const { answer , setIsCompleted , passmark  } = props;
+    let score = 0;
     let status = "";
+    for(let i = 0; i < answer.length; i++)if (answer[i] == 'true') score += 20;
     if (score >= passmark) status = "You have passed the quiz";
     else status = "Sorry you have to try again";
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         id: "result",
         __source: {
             fileName: "public/components/Result.js",
-            lineNumber: 18,
+            lineNumber: 25,
             columnNumber: 5
         },
         __self: undefined,
@@ -31703,7 +31713,7 @@ const Result = (props)=>{
             /*#__PURE__*/ _jsxRuntime.jsxs("header", {
                 __source: {
                     fileName: "public/components/Result.js",
-                    lineNumber: 19,
+                    lineNumber: 26,
                     columnNumber: 7
                 },
                 __self: undefined,
@@ -31711,7 +31721,7 @@ const Result = (props)=>{
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                         __source: {
                             fileName: "public/components/Result.js",
-                            lineNumber: 20,
+                            lineNumber: 27,
                             columnNumber: 9
                         },
                         __self: undefined,
@@ -31721,7 +31731,7 @@ const Result = (props)=>{
                         src: _25PngDefault.default,
                         __source: {
                             fileName: "public/components/Result.js",
-                            lineNumber: 21,
+                            lineNumber: 28,
                             columnNumber: 9
                         },
                         __self: undefined
@@ -31732,14 +31742,14 @@ const Result = (props)=>{
                 id: "status",
                 __source: {
                     fileName: "public/components/Result.js",
-                    lineNumber: 24,
+                    lineNumber: 31,
                     columnNumber: 7
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                     __source: {
                         fileName: "public/components/Result.js",
-                        lineNumber: 25,
+                        lineNumber: 32,
                         columnNumber: 9
                     },
                     __self: undefined,
@@ -31747,7 +31757,7 @@ const Result = (props)=>{
                         /*#__PURE__*/ _jsxRuntime.jsxs("span", {
                             __source: {
                                 fileName: "public/components/Result.js",
-                                lineNumber: 25,
+                                lineNumber: 32,
                                 columnNumber: 12
                             },
                             __self: undefined,
@@ -31759,7 +31769,7 @@ const Result = (props)=>{
                         /*#__PURE__*/ _jsxRuntime.jsxs("span", {
                             __source: {
                                 fileName: "public/components/Result.js",
-                                lineNumber: 25,
+                                lineNumber: 32,
                                 columnNumber: 34
                             },
                             __self: undefined,
@@ -31769,7 +31779,7 @@ const Result = (props)=>{
                                     id: "score",
                                     __source: {
                                         fileName: "public/components/Result.js",
-                                        lineNumber: 25,
+                                        lineNumber: 32,
                                         columnNumber: 55
                                     },
                                     __self: undefined,
@@ -31783,18 +31793,17 @@ const Result = (props)=>{
             /*#__PURE__*/ _jsxRuntime.jsx("footer", {
                 __source: {
                     fileName: "public/components/Result.js",
-                    lineNumber: 28,
+                    lineNumber: 35,
                     columnNumber: 7
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
                     onClick: ()=>{
                         setIsCompleted(false);
-                        setScore(0);
                     },
                     __source: {
                         fileName: "public/components/Result.js",
-                        lineNumber: 29,
+                        lineNumber: 36,
                         columnNumber: 9
                     },
                     __self: undefined,

@@ -101,3 +101,11 @@ $theme-color: #0466c8;
         }
     }
 }
+
+@media screen and (max-width: 483px){
+
+    #container {
+        width: 90%;
+    }
+    
+}

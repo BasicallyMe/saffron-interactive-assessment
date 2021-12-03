@@ -4,9 +4,16 @@ import Image from './../assets/25.png'
 
 
 const Result = (props) => {
-  const { score, setScore, setIsCompleted, passmark } = props;
 
+  const { answer, setIsCompleted, passmark } = props;
+  let score = 0;
   let status = "";
+
+  for(let i = 0; i < answer.length; i++) {
+    if (answer[i] == 'true') {
+      score+=20
+    }
+  }
 
   if (score >= passmark) {
     status = "You have passed the quiz";
@@ -29,7 +36,6 @@ const Result = (props) => {
         <button
           onClick={() => {
             setIsCompleted(false);
-            setScore(0);
           }}
         >
           Try again
