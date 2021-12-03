@@ -1,19 +1,38 @@
 import React from "react";
+import "./../scss/Result.scss";
 
 const Result = (props) => {
+  const { score, setScore, setIsCompleted, passmark } = props;
+
+  let result = "";
+
+  if (score >= passmark) {
+    result = "You have passed the quiz";
+  } else {
+    result = "Sorry you have to try again";
+  }
+
   return (
-    <>
-      <h1>Congratulations on completing the quiz</h1>
-      <p>Your score is {props.score}</p>
-      <button
-        onClick={() => {
-          props.setIsCompleted(false);
-          props.setScore(0)
-        }}
-      >
-        Retake the quiz
-      </button>
-    </>
+    <div id="result">
+      <header>
+        <h1>{result}</h1>
+      </header>
+
+      <section id="score-div">
+        <p>Your score is {score} </p>
+      </section>
+
+      <footer>
+        <button
+          onClick={() => {
+            setIsCompleted(false);
+            setScore(0);
+          }}
+        >
+          Try again
+        </button>
+      </footer>
+    </div>
   );
 };
 

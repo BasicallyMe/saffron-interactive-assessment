@@ -1,64 +1,61 @@
 import React, { useState } from "react";
-import { FaAngleLeft } from "react-icons/fa";
+import './../scss/Questions.scss'
+import { VscChevronLeft } from "react-icons/vsc";
 
-const data = require("./../../questions.json");
-console.log(data.questions.length);
+
 
 const Questions = (props) => {
   const [questionNumber, setQuestionNumber] = useState(0);
+  const { data, score, setScore, setIsCompleted } = props
 
   const optionsList = data.questions[questionNumber].options.map((option) => (
     <button
       onClick={changeQuestion}
       value={option.isCorrect}
       key={option.label}
-    >
+    > 
       {option.label}
     </button>
   ));
 
+  function goBack() {
+    if (questionNumber !== 0) {
+      setQuestionNumber(questionNumber - 1)
+    }
+  }
   function changeQuestion(e) {
+    if (e.target.value == "true") {
+      setScore(score + 20);
+    }
     if (questionNumber === data.questions.length - 1) {
-      props.setIsCompleted(true)
+      setIsCompleted(true)
     } else {
-      if (e.target.value == "true") {
-        console.log(e.target.value);
-        props.setScore(props.score + 20);
-      } else {
-        console.log(e.target.value);
-      }
-      //   console.log(`Score is ${props.score}`)
       setQuestionNumber(questionNumber + 1);
     }
-    // if (questionNumber <= data.questions.length) {
-    //   setQuestionNumber(questionNumber + 1);
-    //   if (e.target.value) {
-    //     props.setScore(props.score + 20);
-    //   }
-    // } else {
-    //     console.log("finished")
-    // }
   }
 
   return (
-    <>
+    <div id="container">
       <section id="top">
-        <header id="top-bar">
+        <header>
           <div id="icon">
-            <FaAngleLeft />
+            <VscChevronLeft className="back-button" onClick={goBack} />
           </div>
           <div id="question-numbers">
             <span id="current-question">0{questionNumber + 1}</span>
-            <span id="total-question">/0{data.questions.length}</span>
+            <span id="total-questions">/0{data.questions.length}</span>
           </div>
         </header>
+        <div id="progress-bar" className="outer-bar">
+            <div id="progress" className="inner-bar"></div>
+        </div>
         <div id="question">
           <p>{data.questions[questionNumber].question}</p>
         </div>
         <footer>About our world</footer>
       </section>
       <section id="bottom">{optionsList}</section>
-    </>
+    </div>
   );
 };
 

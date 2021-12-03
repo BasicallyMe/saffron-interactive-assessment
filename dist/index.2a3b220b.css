@@ -1,6 +1,126 @@
-@import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap";
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
   background-color: #dee2e6;
-  font-family: Poppins;
+  height: 100vh;
+  font-family: Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#container {
+  background-color: #0466c8;
+  height: 90%;
+  width: 25%;
+}
+#container section {
+  padding: 0 1.4rem;
+}
+#container #top {
+  background-color: white;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+}
+#container #top header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2rem;
+}
+#container #top header #icon {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+#container #top header #icon .back-button {
+  font-size: 1.4rem;
+}
+#container #top header #question-numbers {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#container #top header #question-numbers #current-question {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+#container #top header #question-numbers #total-questions {
+  font-size: 0.8rem;
+}
+#container #top #question {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#container #top #question p {
+  font-weight: 200;
+  font-size: 2rem;
+  line-height: 2.7rem;
+}
+#container #top footer {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+#container #bottom {
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#container #bottom button {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  border-left: solid 5px white;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+#result {
+  background-color: white;
+  height: 90%;
+  width: 25%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: black;
+}
+#result header h1 {
+  font-weight: 200;
+  font-size: 2.4rem;
+}
+#result section p {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+#result footer {
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#result footer button {
+  background-color: transparent;
+  border: solid 1px black;
+  height: 3rem;
+  width: 40%;
+  font-weight: 400;
 }
 /*# sourceMappingURL=index.2a3b220b.css.map */

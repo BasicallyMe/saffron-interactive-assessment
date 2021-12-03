@@ -1,0 +1,39 @@
+#result {
+  background-color: white;
+  height: 90%;
+  width: 25%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: black;
+
+  header {
+    h1 {
+      font-weight: 200;
+      font-size: 2.4rem;
+    }
+  }
+  section {
+      p {
+          font-weight: 400;
+          font-size: 1.5rem;
+      }
+  }
+
+  footer {
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    button {
+      background-color: transparent;
+      border: solid 1px black;
+      height: 3rem;
+      width: 40%;
+      font-weight: 400;
+    }
+  }
+}
