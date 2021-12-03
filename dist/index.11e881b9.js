@@ -31715,7 +31715,7 @@ const Result = (props)=>{
                             columnNumber: 9
                         },
                         __self: undefined,
-                        children: "Finished"
+                        children: "Quiz completed"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("img", {
                         src: _25PngDefault.default,
@@ -31729,21 +31729,55 @@ const Result = (props)=>{
                 ]
             }),
             /*#__PURE__*/ _jsxRuntime.jsx("section", {
-                id: "score-div",
+                id: "status",
                 __source: {
                     fileName: "public/components/Result.js",
                     lineNumber: 24,
                     columnNumber: 7
                 },
                 __self: undefined,
-                children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                children: /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                     __source: {
                         fileName: "public/components/Result.js",
                         lineNumber: 25,
                         columnNumber: 9
                     },
                     __self: undefined,
-                    children: status
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsxs("span", {
+                            __source: {
+                                fileName: "public/components/Result.js",
+                                lineNumber: 25,
+                                columnNumber: 12
+                            },
+                            __self: undefined,
+                            children: [
+                                status,
+                                "."
+                            ]
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsxs("span", {
+                            __source: {
+                                fileName: "public/components/Result.js",
+                                lineNumber: 25,
+                                columnNumber: 34
+                            },
+                            __self: undefined,
+                            children: [
+                                "Your score was ",
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    id: "score",
+                                    __source: {
+                                        fileName: "public/components/Result.js",
+                                        lineNumber: 25,
+                                        columnNumber: 55
+                                    },
+                                    __self: undefined,
+                                    children: score
+                                })
+                            ]
+                        })
+                    ]
                 })
             }),
             /*#__PURE__*/ _jsxRuntime.jsx("footer", {

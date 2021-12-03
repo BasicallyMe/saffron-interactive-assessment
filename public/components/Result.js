@@ -17,12 +17,12 @@ const Result = (props) => {
   return (
     <div id="result">
       <header>
-        <h1>Finished</h1>
+        <h1>Quiz completed</h1>
         <img src={Image}></img>
       </header>
 
-      <section id="score-div">
-        <p>{status}</p>
+      <section id="status">
+        <p><span>{status}.</span><span>Your score was <span id="score">{score}</span></span></p>
       </section>
 
       <footer>
