@@ -1,25 +1,28 @@
 import React from "react";
 import "./../scss/Result.scss";
+import Image from './../assets/25.png'
+
 
 const Result = (props) => {
   const { score, setScore, setIsCompleted, passmark } = props;
 
-  let result = "";
+  let status = "";
 
   if (score >= passmark) {
-    result = "You have passed the quiz";
+    status = "You have passed the quiz";
   } else {
-    result = "Sorry you have to try again";
+    status = "Sorry you have to try again";
   }
 
   return (
     <div id="result">
       <header>
-        <h1>{result}</h1>
+        <h1>Finished</h1>
+        <img src={Image}></img>
       </header>
 
       <section id="score-div">
-        <p>Your score is {score} </p>
+        <p>{status}</p>
       </section>
 
       <footer>

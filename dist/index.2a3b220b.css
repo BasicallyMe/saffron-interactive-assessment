@@ -23,7 +23,7 @@ body {
 }
 #container #top {
   background-color: white;
-  height: 55%;
+  height: 60%;
   display: flex;
   flex-direction: column;
 }
@@ -52,10 +52,23 @@ body {
 }
 #container #top header #question-numbers #current-question {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 #container #top header #question-numbers #total-questions {
   font-size: 0.8rem;
+  font-weight: 300;
+}
+#container #top #outer-progress-bar {
+  padding: 0;
+  margin-top: 15px;
+  width: 100%;
+  height: 7px;
+  border: none;
+  border-bottom: solid 1px #ced4da;
+}
+#container #top #outer-progress-bar #inner-progress-bar {
+  height: 100%;
+  background-color: #0466c8;
 }
 #container #top #question {
   height: 70%;
@@ -73,7 +86,7 @@ body {
   font-weight: 300;
 }
 #container #bottom {
-  height: 45%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,36 +104,27 @@ body {
   font-size: 1rem;
 }
 #result {
-  background-color: white;
+  background-color: #f2e9e4;
   height: 90%;
   width: 25%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  color: black;
+}
+#result header {
+  background-color: yellow;
+  height: 60%;
+  width: 100%;
+}
+#result header h1, #result header img {
+  margin: 0;
+}
+#result header img {
+  height: 80%;
+  max-width: 100%;
 }
 #result header h1 {
-  font-weight: 200;
-  font-size: 2.4rem;
-}
-#result section p {
-  font-weight: 400;
-  font-size: 1.5rem;
-}
-#result footer {
-  height: 15%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#result footer button {
-  background-color: transparent;
-  border: solid 1px black;
-  height: 3rem;
-  width: 40%;
-  font-weight: 400;
+  text-align: center;
+  height: 20%;
 }
 /*# sourceMappingURL=index.2a3b220b.css.map */

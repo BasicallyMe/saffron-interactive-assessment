@@ -1,26 +1,28 @@
 import React, { useState } from "react";
-import './../scss/Questions.scss'
+import "./../scss/Questions.scss";
 import { VscChevronLeft } from "react-icons/vsc";
-
-
 
 const Questions = (props) => {
   const [questionNumber, setQuestionNumber] = useState(0);
-  const { data, score, setScore, setIsCompleted } = props
+  const { data, score, setScore, setIsCompleted } = props;
+
+  const progressBarStyle = {
+    width: `${((questionNumber + 1) / data.questions.length) * 100}%`
+  }
 
   const optionsList = data.questions[questionNumber].options.map((option) => (
     <button
       onClick={changeQuestion}
       value={option.isCorrect}
       key={option.label}
-    > 
+    >
       {option.label}
     </button>
   ));
 
   function goBack() {
     if (questionNumber !== 0) {
-      setQuestionNumber(questionNumber - 1)
+      setQuestionNumber(questionNumber - 1);
     }
   }
   function changeQuestion(e) {
@@ -28,7 +30,7 @@ const Questions = (props) => {
       setScore(score + 20);
     }
     if (questionNumber === data.questions.length - 1) {
-      setIsCompleted(true)
+      setIsCompleted(true);
     } else {
       setQuestionNumber(questionNumber + 1);
     }
@@ -46,9 +48,9 @@ const Questions = (props) => {
             <span id="total-questions">/0{data.questions.length}</span>
           </div>
         </header>
-        <div id="progress-bar" className="outer-bar">
-            <div id="progress" className="inner-bar"></div>
-        </div>
+        <section id="outer-progress-bar">
+          <div id="inner-progress-bar" style={progressBarStyle}></div>
+        </section>
         <div id="question">
           <p>{data.questions[questionNumber].question}</p>
         </div>

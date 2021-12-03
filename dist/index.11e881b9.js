@@ -22930,12 +22930,15 @@ const Questions = (props)=>{
     _s();
     const [questionNumber, setQuestionNumber] = _react.useState(0);
     const { data , score , setScore , setIsCompleted  } = props;
+    const progressBarStyle = {
+        width: `${(questionNumber + 1) / data.questions.length * 100}%`
+    };
     const optionsList = data.questions[questionNumber].options.map((option)=>/*#__PURE__*/ _jsxRuntime.jsx("button", {
             onClick: changeQuestion,
             value: option.isCorrect,
             __source: {
                 fileName: "public/components/Questions.js",
-                lineNumber: 12,
+                lineNumber: 14,
                 columnNumber: 5
             },
             __self: undefined,
@@ -22954,7 +22957,7 @@ const Questions = (props)=>{
         id: "container",
         __source: {
             fileName: "public/components/Questions.js",
-            lineNumber: 38,
+            lineNumber: 40,
             columnNumber: 5
         },
         __self: undefined,
@@ -22963,7 +22966,7 @@ const Questions = (props)=>{
                 id: "top",
                 __source: {
                     fileName: "public/components/Questions.js",
-                    lineNumber: 39,
+                    lineNumber: 41,
                     columnNumber: 7
                 },
                 __self: undefined,
@@ -22971,7 +22974,7 @@ const Questions = (props)=>{
                     /*#__PURE__*/ _jsxRuntime.jsxs("header", {
                         __source: {
                             fileName: "public/components/Questions.js",
-                            lineNumber: 40,
+                            lineNumber: 42,
                             columnNumber: 9
                         },
                         __self: undefined,
@@ -22980,7 +22983,7 @@ const Questions = (props)=>{
                                 id: "icon",
                                 __source: {
                                     fileName: "public/components/Questions.js",
-                                    lineNumber: 41,
+                                    lineNumber: 43,
                                     columnNumber: 11
                                 },
                                 __self: undefined,
@@ -22989,7 +22992,7 @@ const Questions = (props)=>{
                                     onClick: goBack,
                                     __source: {
                                         fileName: "public/components/Questions.js",
-                                        lineNumber: 42,
+                                        lineNumber: 44,
                                         columnNumber: 13
                                     },
                                     __self: undefined
@@ -22999,7 +23002,7 @@ const Questions = (props)=>{
                                 id: "question-numbers",
                                 __source: {
                                     fileName: "public/components/Questions.js",
-                                    lineNumber: 44,
+                                    lineNumber: 46,
                                     columnNumber: 11
                                 },
                                 __self: undefined,
@@ -23008,7 +23011,7 @@ const Questions = (props)=>{
                                         id: "current-question",
                                         __source: {
                                             fileName: "public/components/Questions.js",
-                                            lineNumber: 45,
+                                            lineNumber: 47,
                                             columnNumber: 13
                                         },
                                         __self: undefined,
@@ -23021,7 +23024,7 @@ const Questions = (props)=>{
                                         id: "total-questions",
                                         __source: {
                                             fileName: "public/components/Questions.js",
-                                            lineNumber: 46,
+                                            lineNumber: 48,
                                             columnNumber: 13
                                         },
                                         __self: undefined,
@@ -23034,22 +23037,21 @@ const Questions = (props)=>{
                             })
                         ]
                     }),
-                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                        id: "progress-bar",
-                        className: "outer-bar",
+                    /*#__PURE__*/ _jsxRuntime.jsx("section", {
+                        id: "outer-progress-bar",
                         __source: {
                             fileName: "public/components/Questions.js",
-                            lineNumber: 49,
+                            lineNumber: 51,
                             columnNumber: 9
                         },
                         __self: undefined,
                         children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            id: "progress",
-                            className: "inner-bar",
+                            id: "inner-progress-bar",
+                            style: progressBarStyle,
                             __source: {
                                 fileName: "public/components/Questions.js",
-                                lineNumber: 50,
-                                columnNumber: 13
+                                lineNumber: 52,
+                                columnNumber: 11
                             },
                             __self: undefined
                         })
@@ -23058,14 +23060,14 @@ const Questions = (props)=>{
                         id: "question",
                         __source: {
                             fileName: "public/components/Questions.js",
-                            lineNumber: 52,
+                            lineNumber: 54,
                             columnNumber: 9
                         },
                         __self: undefined,
                         children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                             __source: {
                                 fileName: "public/components/Questions.js",
-                                lineNumber: 53,
+                                lineNumber: 55,
                                 columnNumber: 11
                             },
                             __self: undefined,
@@ -23075,7 +23077,7 @@ const Questions = (props)=>{
                     /*#__PURE__*/ _jsxRuntime.jsx("footer", {
                         __source: {
                             fileName: "public/components/Questions.js",
-                            lineNumber: 55,
+                            lineNumber: 57,
                             columnNumber: 9
                         },
                         __self: undefined,
@@ -23087,7 +23089,7 @@ const Questions = (props)=>{
                 id: "bottom",
                 __source: {
                     fileName: "public/components/Questions.js",
-                    lineNumber: 57,
+                    lineNumber: 59,
                     columnNumber: 7
                 },
                 __self: undefined,
@@ -23107,7 +23109,7 @@ $RefreshReg$(_c, "Questions");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","./../scss/Questions.scss":"3NulR","react-icons/vsc":"4duFr"}],"3NulR":[function() {},{}],"4duFr":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","react-icons/vsc":"4duFr","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","./../scss/Questions.scss":"3NulR"}],"4duFr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "VscAccount", ()=>VscAccount
@@ -31669,7 +31671,7 @@ var DefaultContext = {
 };
 var IconContext = _reactDefault.default.createContext && _reactDefault.default.createContext(DefaultContext);
 
-},{"react":"4mchR","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"fs0on":[function(require,module,exports) {
+},{"react":"4mchR","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"3NulR":[function() {},{}],"fs0on":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$7dea = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31682,63 +31684,72 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _resultScss = require("./../scss/Result.scss");
+var _25Png = require("./../assets/25.png");
+var _25PngDefault = parcelHelpers.interopDefault(_25Png);
 const Result = (props)=>{
     const { score , setScore , setIsCompleted , passmark  } = props;
-    let result = "";
-    if (score >= passmark) result = "You have passed the quiz";
-    else result = "Sorry you have to try again";
+    let status = "";
+    if (score >= passmark) status = "You have passed the quiz";
+    else status = "Sorry you have to try again";
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         id: "result",
         __source: {
             fileName: "public/components/Result.js",
-            lineNumber: 16,
+            lineNumber: 18,
             columnNumber: 5
         },
         __self: undefined,
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsx("header", {
+            /*#__PURE__*/ _jsxRuntime.jsxs("header", {
                 __source: {
                     fileName: "public/components/Result.js",
-                    lineNumber: 17,
+                    lineNumber: 19,
                     columnNumber: 7
                 },
                 __self: undefined,
-                children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
-                    __source: {
-                        fileName: "public/components/Result.js",
-                        lineNumber: 18,
-                        columnNumber: 9
-                    },
-                    __self: undefined,
-                    children: result
-                })
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        __source: {
+                            fileName: "public/components/Result.js",
+                            lineNumber: 20,
+                            columnNumber: 9
+                        },
+                        __self: undefined,
+                        children: "Finished"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                        src: _25PngDefault.default,
+                        __source: {
+                            fileName: "public/components/Result.js",
+                            lineNumber: 21,
+                            columnNumber: 9
+                        },
+                        __self: undefined
+                    })
+                ]
             }),
             /*#__PURE__*/ _jsxRuntime.jsx("section", {
                 id: "score-div",
                 __source: {
                     fileName: "public/components/Result.js",
-                    lineNumber: 21,
+                    lineNumber: 24,
                     columnNumber: 7
                 },
                 __self: undefined,
-                children: /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                     __source: {
                         fileName: "public/components/Result.js",
-                        lineNumber: 22,
+                        lineNumber: 25,
                         columnNumber: 9
                     },
                     __self: undefined,
-                    children: [
-                        "Your score is ",
-                        score,
-                        " "
-                    ]
+                    children: status
                 })
             }),
             /*#__PURE__*/ _jsxRuntime.jsx("footer", {
                 __source: {
                     fileName: "public/components/Result.js",
-                    lineNumber: 25,
+                    lineNumber: 28,
                     columnNumber: 7
                 },
                 __self: undefined,
@@ -31749,7 +31760,7 @@ const Result = (props)=>{
                     },
                     __source: {
                         fileName: "public/components/Result.js",
-                        lineNumber: 26,
+                        lineNumber: 29,
                         columnNumber: 9
                     },
                     __self: undefined,
@@ -31769,7 +31780,45 @@ $RefreshReg$(_c, "Result");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","./../scss/Result.scss":"7XIZ5"}],"7XIZ5":[function() {},{}],"jE1UE":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","./../scss/Result.scss":"7XIZ5","./../assets/25.png":"2r1DJ"}],"7XIZ5":[function() {},{}],"2r1DJ":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('1xU0q') + "25.a0cbee7b.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"chiK4"}],"chiK4":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"jE1UE":[function(require,module,exports) {
 module.exports = JSON.parse("{\"passmark\":80,\"questions\":[{\"question\":\"The Statue of Liberty was a gift to the US from which Country?\",\"options\":[{\"label\":\"France\",\"isCorrect\":true},{\"label\":\"Japan\",\"isCorrect\":false},{\"label\":\"Holland\",\"isCorrect\":false}]},{\"question\":\"Where did the bungee jump originate?\",\"options\":[{\"label\":\"Canada\",\"isCorrect\":false},{\"label\":\"New Zealand\",\"isCorrect\":true},{\"label\":\"Australia\",\"isCorrect\":false},{\"label\":\"America\",\"isCorrect\":false}]},{\"question\":\"Which country is nicknamed 'the boot'?\",\"options\":[{\"label\":\"Italy\",\"isCorrect\":true},{\"label\":\"Wales\",\"isCorrect\":false},{\"label\":\"Germany\",\"isCorrect\":false},{\"label\":\"Belgium\",\"isCorrect\":false}]},{\"question\":\"Which country invented tea?\",\"options\":[{\"label\":\"India\",\"isCorrect\":false},{\"label\":\"China\",\"isCorrect\":true}]},{\"question\":\"Which country is home to the most lakes in the entire world?\",\"options\":[{\"label\":\"Norway\",\"isCorrect\":false},{\"label\":\"Canada\",\"isCorrect\":true},{\"label\":\"Russia\",\"isCorrect\":false},{\"label\":\"America\",\"isCorrect\":false}]}]}");
 
 },{}]},["emU3S","2dmRv","eZRex"], "eZRex", "parcelRequire59c3")

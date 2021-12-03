@@ -1,5 +1,6 @@
+$theme-color: #0466c8;
 #container {
-    background-color: #0466c8;
+    background-color: $theme-color;
     height: 90%;
     width: 25%;
 
@@ -9,7 +10,7 @@
 
     #top {
         background-color: white;
-        height: 55%;
+        height: 60%;
         display: flex;
         flex-direction: column;
 
@@ -41,11 +42,25 @@
 
                 #current-question {
                     font-weight: 600;
-                    font-size: 1.2rem;
+                    font-size: 1.3rem;
                 }
                 #total-questions {
                     font-size: 0.8rem;
+                    font-weight: 300;
                 }
+            }
+        }
+        #outer-progress-bar {
+            padding: 0;
+            margin-top: 15px;
+            width: 100%;
+            height: 7px;
+            border: none;
+            border-bottom: solid 1px #ced4da;
+
+            #inner-progress-bar {
+                height: 100%;
+                background-color: $theme-color;
             }
         }
         #question {
@@ -66,7 +81,7 @@
         }
     }
     #bottom {
-        height: 45%;
+        height: 40%;
         display: flex;
         flex-direction: column;
         align-items: center;
