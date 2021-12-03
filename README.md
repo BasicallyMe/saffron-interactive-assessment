@@ -18,6 +18,6 @@ Running these two commands will download all the necessary dev-dependencies for 
 
 npm run dev
 
-Now you can view the output in your browser in the address specified in the terminal output. The address will probably be localhost:1234
+Now you can view the output in your browser at the address specified in the terminal output. The address will probably be localhost:1234
 
 Thank you so much
