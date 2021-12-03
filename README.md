@@ -20,4 +20,4 @@ npm run dev
 
 Now you can view the output in your browser at the address specified in the terminal output. The address will probably be localhost:1234
 
-Thank you so much
+<h1>Thank you so much</h1>
