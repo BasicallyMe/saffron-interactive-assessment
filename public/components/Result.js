@@ -1,20 +1,21 @@
 import React from "react";
 import "./../scss/Result.scss";
-import Image from './../assets/25.png'
+import Image from './../assets/25.png' //imports an image for the result screen
 
 
 const Result = (props) => {
 
   const { answer, setIsCompleted, passmark } = props;
-  let score = 0;
-  let status = "";
+  let score = 0; //initially sets the score to 0
+  let status = ""; //initialise the result status to an empty string
 
-  for(let i = 0; i < answer.length; i++) {
-    if (answer[i] == 'true') {
+  for(let i = 0; i < answer.length; i++) { //loops through the entire array of answers
+    if (answer[i] == 'true') { //if the value at the current index is 'true', increase the score by 20 points
       score+=20
     }
   }
 
+  //sets the status to a custom message depending on the score
   if (score >= passmark) {
     status = "You have passed the quiz";
   } else {
